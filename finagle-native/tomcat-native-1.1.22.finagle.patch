@@ -1066,11 +1066,11 @@ index 0000000..1837029
 +        return false;
 +    }
 +
-+    @Override
-+    protected void finalize() throws Throwable {
-+        shutdown();
-+        super.finalize();
-+    }
++    //liquable, finalizer cause memory-leak, should shutdown manually
++    //@Override protected void finalize() throws Throwable {
++    //    shutdown();
++    //    super.finalize();
++    //}
 +
 +    public void setIdentifier(String identifier) {
 +        this.identifier = identifier;
